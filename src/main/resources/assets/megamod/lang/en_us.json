@@ -1,0 +1,21 @@
+{
+  "itemGroup.megamod": "Example Mod Tab",
+  "block.megamod.example_block": "Example Block",
+  "item.megamod.example_item": "Example Item",
+
+  "megamod.configuration.title": "Example Mod Configs",
+  "megamod.configuration.section.megamod.common.toml": "Example Mod Configs",
+  "megamod.configuration.section.megamod.common.toml.title": "Example Mod Configs",
+  "megamod.configuration.items": "Item List",
+  "megamod.configuration.logDirtBlock": "Log Dirt Block",
+  "megamod.configuration.magicNumberIntroduction": "Magic Number Text",
+  "megamod.configuration.magicNumber": "Magic Number",
+
+
+
+
+  "creativetab.megamod.shipmod_tab": "Ships",
+  "block.megamod.floater": "Floater",
+  "block.megamod.steering_wheel": "Steering Wheel"
+
+}
