@@ -32,7 +32,6 @@ public class ShipModBlocks {
                     .sound(SoundType.WOOD)
                     .strength(2f)
                     .noOcclusion()
-
             )
 
     );

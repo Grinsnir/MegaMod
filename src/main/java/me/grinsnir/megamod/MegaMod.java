@@ -1,6 +1,7 @@
 package me.grinsnir.megamod;
 
 import me.grinsnir.megamod.block.shipmod.ShipModBlocks;
+import me.grinsnir.megamod.block.shipmod.entity.ShipModBlockEntities;
 import me.grinsnir.megamod.item.ModCreativeModeTabs;
 import me.grinsnir.megamod.item.ShipModItems;
 import org.slf4j.Logger;
@@ -43,6 +44,7 @@ public class MegaMod {
         ShipModBlocks.register(modEventBus);
         ShipModItems.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
+        ShipModBlockEntities.register(modEventBus);
 
 
         // Register the item to a creative tab
