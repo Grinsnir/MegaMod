@@ -1,8 +1,5 @@
 {
   "variants": {
-    "": {
-      "model": "megamod:block/steering_wheel"
-    },
     "facing=north": {
       "model": "megamod:block/steering_wheel",
       "y": 0
