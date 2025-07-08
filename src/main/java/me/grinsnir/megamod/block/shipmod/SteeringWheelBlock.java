@@ -14,17 +14,30 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 public class SteeringWheelBlock extends BaseEntityBlock {
-    public static final MapCodec<SteeringWheelBlock> CODEC = simpleCodec(SteeringWheelBlock::new);
-    private static final VoxelShape SHAPE_NORTH = Block.box(4, 0, 8, 12, 14, 14);
-    private static final VoxelShape SHAPE_WEST = Block.box(8, 0, 4, 14, 14, 12);
-    private static final VoxelShape SHAPE_SOUTH = Block.box(4, 0, 2, 12, 14, 8);
-    private static final VoxelShape SHAPE_EAST = Block.box(2, 0, 4, 8, 14, 12);
-    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
+    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    public static final MapCodec<SteeringWheelBlock> CODEC = simpleCodec(SteeringWheelBlock::new);
+
+    //VoxelShapes - Parts
+    private static final VoxelShape BASE_NORTH = Block.box(0,0,3,16,1,16);
+    private static final VoxelShape STAND_NORTH = Block.box(4, 0, 8, 12, 15, 14);
+    private static final VoxelShape BASE_WEST = Block.box(3,0,3,16,1,16);
+    private static final VoxelShape STAND_WEST = Block.box(8, 0, 4, 14, 15, 12);
+    private static final VoxelShape BASE_SOUTH = Block.box(0,0,0,16,1,13);
+    private static final VoxelShape STAND_SOUTH = Block.box(4, 0, 2, 12, 15, 8);
+    private static final VoxelShape BASE_EAST = Block.box(0,0,0,13,1,16);
+    private static final VoxelShape STAND_EAST = Block.box(2, 0, 4, 8, 15, 12);
+
+    //VoxelShapes - Combined
+    private static final VoxelShape SHAPE_NORTH = Shapes.or(BASE_NORTH, STAND_NORTH);
+    private static final VoxelShape SHAPE_WEST = Shapes.or(BASE_WEST, STAND_WEST);
+    private static final VoxelShape SHAPE_SOUTH = Shapes.or(BASE_SOUTH, STAND_SOUTH);
+    private static final VoxelShape SHAPE_EAST = Shapes.or(BASE_EAST, STAND_EAST);
 
     public SteeringWheelBlock(Properties properties) {
         super(properties);
