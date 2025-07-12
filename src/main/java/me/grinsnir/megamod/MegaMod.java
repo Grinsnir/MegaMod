@@ -4,6 +4,12 @@ import me.grinsnir.megamod.block.shipmod.ShipModBlocks;
 import me.grinsnir.megamod.block.shipmod.entity.ShipModBlockEntities;
 import me.grinsnir.megamod.item.ModCreativeModeTabs;
 import me.grinsnir.megamod.item.ShipModItems;
+import me.grinsnir.megamod.screen.ModMenuTypes;
+import me.grinsnir.megamod.screen.custom.shipmod.SteeringWheelScreen;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -40,11 +46,12 @@ public class MegaMod {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
-        //Hier meine registers
+        //TODO: Put Registers here
         ShipModBlocks.register(modEventBus);
         ShipModItems.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
         ShipModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
 
         // Register the item to a creative tab
@@ -54,6 +61,8 @@ public class MegaMod {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
+
+    //TODO: Figure out what this one does lol
     private void commonSetup(FMLCommonSetupEvent event) {
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
@@ -78,6 +87,17 @@ public class MegaMod {
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
+
+    }
+
+    //TODO: Why is this deprecated? Where do I put it now? What do I put instead?
+    @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class ClientModEvents{
+
+        @SubscribeEvent
+        public static void registerScreens(RegisterMenuScreensEvent event) {
+            event.register(ModMenuTypes.STEERING_WHEEL_MENU.get(), SteeringWheelScreen::new);
+        }
 
     }
 

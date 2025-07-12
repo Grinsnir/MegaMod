@@ -14,7 +14,7 @@ public class ShipModBlockEntities {
             DeferredRegister.create(BuiltInRegistries.BLOCK_ENTITY_TYPE, MegaMod.MOD_ID);
 
 
-    //EntityBlockRegister
+    //EntityBlockRegister SteeringWheel
     public static final Supplier<BlockEntityType<SteeringWheelBlockEntity>> STEERING_WHEEL_BE =
             BLOCK_ENTITIES.register("steering_wheel_be", () -> BlockEntityType.Builder.of(
                     SteeringWheelBlockEntity::new, ShipModBlocks.STEERING_WHEEL.get()).build(null));

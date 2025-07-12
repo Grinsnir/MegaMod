@@ -1,5 +1,7 @@
 package me.grinsnir.megamod;
 
+//TODO: What does this file do? It's not in Kaupenjoe's Tutorials! What do I do with it?
+
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;

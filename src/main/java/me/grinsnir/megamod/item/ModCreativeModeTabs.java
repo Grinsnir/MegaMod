@@ -22,14 +22,13 @@ public class ModCreativeModeTabs {
             .icon(() -> new ItemStack(ShipModBlocks.FLOATER.get()))
             .title(Component.translatable("creativetab.megamod.shipmod_tab"))
             .displayItems((itemDisplayParameters,output ) -> {
+
+        //TODO: Add Items here
         output.accept(ShipModBlocks.FLOATER);
         output.accept(ShipModBlocks.STEERING_WHEEL);
 
-    })
-            .build());
-
-
-
+            })
+    .build());
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TAB.register(eventBus);
