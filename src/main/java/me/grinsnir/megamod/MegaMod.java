@@ -90,8 +90,7 @@ public class MegaMod {
 
     }
 
-    //TODO: Why is this deprecated? Where do I put it now? What do I put instead?
-    @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT)
     public static class ClientModEvents{
 
         @SubscribeEvent
